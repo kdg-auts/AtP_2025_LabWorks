@@ -312,30 +312,30 @@ flowchart TD
     SetCP --> InputN[/Ввести N/]
     InputN --> CheckN{N >= 2 ?}
     
-    CheckN -- Ні --> ErrMsg[/Помилка: N має бути не менше 2!/]
+    CheckN -- Ні --> ErrMsg[/"Помилка: N має бути не менше 2!"/]
     ErrMsg --> Stop1([Кінець з кодом 1])
     
-    CheckN -- Так --> InputArr[/Ввести N дійсних чисел у масив a/]
-    InputArr --> Init[firstDiff = |a0 - a1|<br>minDiff = firstDiff<br>maxDiff = firstDiff<br>isIncreasing = true<br>i = 1]
+    CheckN -- Так --> InputArr[/"Ввести N дійсних чисел у масив a"/]
+    InputArr --> Init["firstDiff = |a0 - a1|<br>minDiff = firstDiff<br>maxDiff = firstDiff<br>isIncreasing = true<br>i = 1"]
     
-    Init --> LoopCond{i < N ?}
+    Init --> LoopCond{"i < N ?"}
     
-    LoopCond -- Так --> CheckInc{a[i] > a[i-1] ?}
-    CheckInc -- Ні --> SetFalse[isIncreasing = false]
-    CheckInc -- Так --> CalcDiff[diff = |a[i-1] - a[i]|]
+    LoopCond -- Так --> CheckInc{"a[i] > a[i-1] ?"}
+    CheckInc -- Ні --> SetFalse["isIncreasing = false"]
+    CheckInc -- Так --> CalcDiff["diff = |a[i-1] - a[i]|"]
     SetFalse --> CalcDiff
     
-    CalcDiff --> CheckMax{diff > maxDiff ?}
-    CheckMax -- Так --> UpdateMax[maxDiff = diff]
-    CheckMax -- Ні --> CheckMin{diff < minDiff ?}
+    CalcDiff --> CheckMax{"diff > maxDiff ?"}
+    CheckMax -- Так --> UpdateMax["maxDiff = diff"]
+    CheckMax -- Ні --> CheckMin{"diff < minDiff ?"}
     UpdateMax --> CheckMin
     
-    CheckMin -- Так --> UpdateMin[minDiff = diff]
-    CheckMin -- Ні --> IncI[i = i + 1]
+    CheckMin -- Так --> UpdateMin["minDiff = diff"]
+    CheckMin -- Ні --> IncI["i = i + 1"]
     UpdateMin --> IncI
     IncI --> LoopCond
     
-    LoopCond -- Ні --> PrintRes[/Вивести minDiff, maxDiff, (maxDiff - minDiff), isIncreasing/]
+    LoopCond -- Ні --> PrintRes[/"Вивести minDiff, maxDiff, (maxDiff - minDiff), isIncreasing"/]
     PrintRes --> Stop0([Кінець])
 ```
 
