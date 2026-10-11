@@ -27,7 +27,7 @@ int main() {
     double r3 = (double)rand() / RAND_MAX;
 
     // Випадкове дійсне число від -20 до 20
-    double r4 = ((double)rand() / RAND_MAX);
+    double r4 = ((double)rand() / RAND_MAX)*40 - 20;
 
     cout << "rand() = " << r1 << endl;
     cout << "Від 1 до 100: " << r2 << endl;
